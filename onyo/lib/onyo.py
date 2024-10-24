@@ -220,9 +220,9 @@ class OnyoRepo(object):
         self.git.clear_cache()
 
     @staticmethod
-    def generate_commit_message(format_string: str,
-                                max_length: int = 80,
-                                **kwargs) -> str:
+    def generate_auto_message(format_string: str,
+                              max_length: int = 80,
+                              **kwargs) -> str:
         r"""Generate a commit message subject.
 
         The function will shorten paths in the resulting string in order to try to fit into

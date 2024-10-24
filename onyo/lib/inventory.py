@@ -142,6 +142,10 @@ class Inventory(object):
         # get user message + generate appendix from operations
         # does order matter for execution? Prob.
         # ^  Nope. Fail on conflicts.
+        if not message.strip():
+            # If we got no message insert dummy subject line in order to not
+            # have the operations record's separator line be the subject.
+            message = "-\n"
         from os import linesep
         paths_to_commit = []
         paths_to_stage = []
